@@ -1,0 +1,33 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "kafkaemitter",
+    "buildTool": "maven",
+    "cacheProvider": "ehcache",
+    "clientFramework": "angular",
+    "clientTestFrameworks": [],
+    "clientTheme": "none",
+    "creationTimestamp": 1759842325355,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "enableHibernateCache": true,
+    "enableTranslation": true,
+    "entities": [],
+    "feignClient": null,
+    "jhipsterVersion": "8.10.0",
+    "jwtSecretKey": "MWE4NTVmZjk1MmMzZjA4MGEwNzBhZmM1YTkzNzIwMWE3MjMwN2ZiODNhYjk4NDg1ZmMzZjU3Njc2OTljNDM0Mzg0M2U3YzljZTM4MTVmMDdmYzVmMDQ4MDRlMGQxNjdmOTM4MGY5MzU1ZTcxZTY2ZWMwMTU1N2ZhOTQ2YzA3ZjQ=",
+    "languages": ["en"],
+    "microfrontend": null,
+    "microfrontends": [],
+    "nativeLanguage": "en",
+    "packageName": "ec.gob.loja.kafkalistener",
+    "prodDatabaseType": "postgresql",
+    "reactive": false,
+    "serverPort": null,
+    "serviceDiscoveryType": null,
+    "syncUserWithIdp": null,
+    "testFrameworks": [],
+    "withAdminUi": true
+  }
+}

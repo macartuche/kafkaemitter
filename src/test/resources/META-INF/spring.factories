@@ -1,0 +1,3 @@
+org.springframework.test.context.ContextCustomizerFactory = \
+    ec.gob.loja.kafkalistener.config.\
+    SqlTestContainersSpringContextCustomizerFactory
