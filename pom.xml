@@ -17,7 +17,7 @@
         <!-- lookup parent from repository -->
     </parent>
 
-    <properties>
+<properties>
         <!--
             Build properties
             The spring-boot version should match the one managed by https://mvnrepository.com/artifact/tech.jhipster/jhipster-dependencies/${jhipster-dependencies.version}
@@ -76,7 +76,31 @@
         <spotless-maven-plugin.version>2.44.3</spotless-maven-plugin.version>
         <spring.profiles.active>dev</spring.profiles.active>
         <springdoc-openapi-starter-webmvc-api.version>2.8.6</springdoc-openapi-starter-webmvc-api.version>
+        <spring-cloud.version>2024.0.0</spring-cloud.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Dependency management to resolve convergence issues -->
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.3.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>1.12.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -287,6 +311,18 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>testcontainers</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-binder-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
     </dependencies>
 
@@ -849,7 +885,7 @@
                 </dependency>
             </dependencies>
         </profile>
-        <profile>
+        <!--<profile>
             <id>docker-compose</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -861,7 +897,7 @@
                     <optional>true</optional>
                 </dependency>
             </dependencies>
-        </profile>
+        </profile>-->
         <profile>
             <!-- This is automatically activated when working in Eclipse -->
             <id>eclipse</id>

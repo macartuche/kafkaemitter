@@ -227,3 +227,22 @@ jhipster:
 # ===================================================================
 
 # application:
+
+---
+spring:
+  cloud:
+    stream:
+      bindings:
+        notificaciones-ciudadano-out-0:
+          destination: notificaciones-ciudadano
+      kafka:
+        binder:
+          brokers: 192.168.15.201:19092 # Dirección de tu servidor Kafka
+          # ⇩ props nativas del cliente Kafka usadas por Producer/Consumer/Admin del binder
+          configuration:
+            key.serializer: org.apache.kafka.common.serialization.StringSerializer
+            security.protocol: SASL_PLAINTEXT
+            sasl.mechanism: SCRAM-SHA-512
+            sasl.jaas.config: >
+              org.apache.kafka.common.security.scram.ScramLoginModule required
+              username="userhub" password="clave-del-userhub";
