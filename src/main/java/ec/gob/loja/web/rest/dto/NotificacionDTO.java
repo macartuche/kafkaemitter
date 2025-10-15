@@ -16,6 +16,7 @@ public class NotificacionDTO {
     private String processNumber; // tramite
     private String notificationDate; // fecha notificacion
     private String subject; //asunto o tema
+    private String redirect;
 
     public String getIdentification() {
         return identification;
@@ -111,5 +112,13 @@ public class NotificacionDTO {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public String getRedirect() {
+        return redirect;
+    }
+
+    public void setRedirect(String redirect) {
+        this.redirect = redirect;
     }
 }
