@@ -4,7 +4,7 @@ services:
   postgresql:
     image: postgres:17.4
     volumes:
-      - ~/volumes/jhipster/kafkaemitter/postgresql/:/var/lib/postgresql/data/
+      - /opt/kafkaemiterBD:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=kafkaemitter
       - POSTGRES_HOST_AUTH_METHOD=trust
