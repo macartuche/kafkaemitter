@@ -1,4 +1,4 @@
-# This configuration is intended for development purpose, it's **your** responsibility to harden it for production
+# This configuration is intended for production use.
 name: kafkaemitter
 services:
   app:
@@ -8,9 +8,11 @@ services:
       - SPRING_PROFILES_ACTIVE=prod,api-docs
       - MANAGEMENT_PROMETHEUS_METRICS_EXPORT_ENABLED=true
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/kafkaemitter
+      - SPRING_DATASOURCE_USERNAME=kafkaemitter
+      - SPRING_DATASOURCE_PASSWORD=your-production-password # CHANGE THIS
       - SPRING_LIQUIBASE_URL=jdbc:postgresql://postgresql:5432/kafkaemitter
     ports:
-      - 127.0.0.1:8080:8080
+      - '8086:8080'
     healthcheck:
       test:
         - CMD
@@ -27,3 +29,6 @@ services:
     extends:
       file: ./postgresql.yml
       service: postgresql
+    environment:
+      - POSTGRES_USER=kafkaemitter
+      - POSTGRES_PASSWORD=kafkaemitter_dt2025
